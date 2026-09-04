@@ -9,7 +9,7 @@ source /opt/system/lmod/lmod/init/profile
 
 # Load julia
 ml juliahpc
-# ml mpi/openmpi # for MPI
+# ml openmpi # for MPI
 
 # Pass on all arguments to julia
 exec julia "${@}"
