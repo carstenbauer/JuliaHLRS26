@@ -25,7 +25,7 @@ A four-day workshop that will take place in Stuttgart at the [High Performance C
 ### Software
 
 What you need:
-  * [Julia 1.11](https://julialang.org/)
+  * [Julia 1.12](https://julialang.org/)
     * I recommend to use [juliaup](https://github.com/JuliaLang/juliaup) to install and manage Julia versions!
     * `curl -fsSL https://install.julialang.org | sh`
   * [Jupyter Lab](https://jupyter.org/)
