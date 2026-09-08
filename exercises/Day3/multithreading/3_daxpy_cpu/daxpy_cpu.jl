@@ -88,10 +88,10 @@ function main()
         # (pretty) printing
         println()
         pretty_table(membw_results;
-            header=[":serial", ":parallel"],
-            row_labels=[":cores", ":sockets", ":numa"],
-            row_label_column_title="# Threads = $(nthreads())",
-            title="Memory Bandwidth (GB/s)")
+                    column_labels=[":serial", ":parallel"],
+                    row_labels=[":cores", ":sockets", ":numa"],
+                    stubhead_label="# Threads = $(nthreads())",
+                    title="Memory Bandwidth (GB/s)")
         println()
     end
 end

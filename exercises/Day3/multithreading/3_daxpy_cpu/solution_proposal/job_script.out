@@ -1,25 +1,25 @@
 
 AXPY with scheduler = :dynamic
 
-Memory Bandwidth (GB/s)
+        Memory Bandwidth (GB/s)
 ┌────────────────┬─────────┬───────────┐
 │ # Threads = 20 │ :serial │ :parallel │
 ├────────────────┼─────────┼───────────┤
-│         :cores │   97.89 │      97.8 │
-│       :sockets │   83.58 │     116.2 │
-│          :numa │   81.77 │    132.86 │
+│         :cores │   53.73 │     98.02 │
+│       :sockets │   67.24 │     132.6 │
+│          :numa │   68.24 │     133.2 │
 └────────────────┴─────────┴───────────┘
 
 
 AXPY with scheduler = :static
 
-Memory Bandwidth (GB/s)
+        Memory Bandwidth (GB/s)
 ┌────────────────┬─────────┬───────────┐
 │ # Threads = 20 │ :serial │ :parallel │
 ├────────────────┼─────────┼───────────┤
-│         :cores │   97.86 │     97.65 │
-│       :sockets │   98.57 │    181.34 │
-│          :numa │    95.1 │    183.51 │
+│         :cores │   97.84 │     97.56 │
+│       :sockets │   80.03 │    183.55 │
+│          :numa │   80.56 │    182.61 │
 └────────────────┴─────────┴───────────┘
 
-116.612799 seconds (2.79 M allocations: 281.456 GiB, 1.93% gc time, 3.29% compilation time)
+122.853426 seconds (5.34 M allocations: 281.569 GiB, 2.05% gc time, 3.78% compilation time: 41% of which was recompilation)

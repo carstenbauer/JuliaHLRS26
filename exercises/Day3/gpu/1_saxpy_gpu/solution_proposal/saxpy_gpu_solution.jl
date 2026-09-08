@@ -73,8 +73,8 @@ function main()
     labels = ["Broadcast", "CUDA kernel", "CUBLAS"]
     data = hcat(labels, 1e3 .* times, flops, bandwidths)
     pretty_table(data;
-                 header = (["Variant", "Runtime", "FLOPS", "Bandwidth"],
-                           ["", "ms", "GFLOP/s", "GB/s"]))
+                column_labels = [["Variant", "Runtime", "FLOPS", "Bandwidth"],
+                                ["", "ms", "GFLOP/s", "GB/s"]])
     println("Theoretical Memory Bandwidth of NVIDIA V100: 900 GB/s")
     return nothing
 end

@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N diff2dgpu
-#PBS -l select=1:node_type=clx-ai:ncpus=4:mem=10gb
+#PBS -l select=1:node_type=clx-ai:ncpus=4:mem=10gb:ngpus=1
 #PBS -l walltime=00:10:00
 #PBS -q smp
 #PBS -j oe
@@ -13,7 +13,6 @@ if [[ -n "${PBS_O_WORKDIR}" ]]; then
     WORKDIR=$PBS_O_WORKDIR
     # ... and load the module(s)
     ml juliahpc
-    ml mpi/openmpi
 fi
 cd $WORKDIR
 

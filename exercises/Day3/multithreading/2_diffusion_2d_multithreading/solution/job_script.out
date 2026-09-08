@@ -2,35 +2,35 @@
 
 #### Run ns=256
 -- single threaded
-Time = 1.0160e-01 s, T_eff = 16.80 GB/s 
+Time = 9.5472e-02 s, T_eff = 17.88 GB/s 
 
 -- multithreaded (10 threads), dynamic scheduling
-Time = 4.1874e-02 s, T_eff = 40.77 GB/s 
+Time = 6.2612e-02 s, T_eff = 27.26 GB/s 
 
 -- multithreaded (10 threads), static scheduling
-Time = 4.0261e-02 s, T_eff = 42.40 GB/s 
+Time = 6.1698e-02 s, T_eff = 27.67 GB/s 
 
 
 
 #### Run ns=512
 -- single threaded
-Time = 1.7231e+00 s, T_eff = 15.93 GB/s 
+Time = 1.7281e+00 s, T_eff = 15.88 GB/s 
 
 -- multithreaded (10 threads), dynamic scheduling
-Time = 3.5149e-01 s, T_eff = 78.08 GB/s 
+Time = 5.3512e-01 s, T_eff = 51.28 GB/s 
 
 -- multithreaded (10 threads), static scheduling
-Time = 3.5211e-01 s, T_eff = 77.94 GB/s 
+Time = 4.3279e-01 s, T_eff = 63.41 GB/s 
 
 
 
 #### Run ns=1028
 -- single threaded
-Time = 2.8768e+01 s, T_eff = 15.52 GB/s 
+Time = 3.0339e+01 s, T_eff = 14.72 GB/s 
 
 -- multithreaded (10 threads), dynamic scheduling
-Time = 4.5219e+00 s, T_eff = 98.75 GB/s 
+Time = 5.0258e+00 s, T_eff = 88.85 GB/s 
 
 -- multithreaded (10 threads), static scheduling
-Time = 4.6258e+00 s, T_eff = 96.53 GB/s 
+Time = 4.9698e+00 s, T_eff = 89.85 GB/s 
 

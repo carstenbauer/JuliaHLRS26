@@ -1,31 +1,30 @@
 
+
 #### GPU run ns=1024
-Prologue: PBS assigned coreids = [1, 2, 3, 4].
-Prologue: Will use GPU 1 (9f6c344e-aafb-a6f0-93fd-6146659179de).
-Time = 1.9305e-01 s, T_eff = 42.58 GB/s 
+Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
+Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
+Time = 3.2305e-02 s, T_eff = 254.48 GB/s 
 
 
 #### GPU run ns=2048
-Prologue: PBS assigned coreids = [1, 2, 3, 4].
-Prologue: Will use GPU 1 (9f6c344e-aafb-a6f0-93fd-6146659179de).
-Time = 1.9644e-01 s, T_eff = 167.39 GB/s 
+Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
+Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
+Time = 4.8314e-02 s, T_eff = 680.62 GB/s 
 
 
 #### GPU run ns=4096
-Prologue: PBS assigned coreids = [1, 2, 3, 4].
-Prologue: Will use GPU 1 (9f6c344e-aafb-a6f0-93fd-6146659179de).
-Time = 1.9558e-01 s, T_eff = 672.52 GB/s 
+Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
+Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
+Time = 1.8667e-01 s, T_eff = 704.62 GB/s 
 
 
 #### GPU run ns=8192
-Prologue: PBS assigned coreids = [1, 2, 3, 4].
-Prologue: Will use GPU 1 (9f6c344e-aafb-a6f0-93fd-6146659179de).
-Time = 7.4426e-01 s, T_eff = 706.92 GB/s 
+Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
+Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
+Time = 7.4909e-01 s, T_eff = 702.36 GB/s 
 
 
 #### GPU run ns=16384
-Prologue: PBS assigned coreids = [1, 2, 3, 4].
-Prologue: Will use GPU 1 (9f6c344e-aafb-a6f0-93fd-6146659179de).
-Time = 3.0035e+00 s, T_eff = 700.70 GB/s 
-Job for ftrm@12555.cl7intern.service failed because the control process exited with error code.
-See "systemctl status ftrm@12555.cl7intern.service" and "journalctl -xe" for details.
+Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
+Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
+Time = 3.0494e+00 s, T_eff = 690.15 GB/s 
