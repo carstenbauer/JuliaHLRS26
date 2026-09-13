@@ -1,6 +1,4 @@
-Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
-Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
 CPU and GPU results match: true
-CPU (sequential):	209.75ms
-GPU (incl. transfer):	3.79ms
-GPU (w/o transfer):	295.37μs
+CPU (sequential):	213.29ms
+GPU (incl. transfer):	4.09ms
+GPU (w/o transfer):	560.02μs

@@ -1,30 +1,20 @@
 
 
 #### GPU run ns=1024
-Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
-Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
-Time = 3.2305e-02 s, T_eff = 254.48 GB/s 
+Time = 3.1877e-02 s, T_eff = 257.89 GB/s 
 
 
 #### GPU run ns=2048
-Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
-Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
-Time = 4.8314e-02 s, T_eff = 680.62 GB/s 
+Time = 4.8321e-02 s, T_eff = 680.52 GB/s 
 
 
 #### GPU run ns=4096
-Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
-Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
-Time = 1.8667e-01 s, T_eff = 704.62 GB/s 
+Time = 1.8686e-01 s, T_eff = 703.92 GB/s 
 
 
 #### GPU run ns=8192
-Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
-Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
-Time = 7.4909e-01 s, T_eff = 702.36 GB/s 
+Time = 7.4920e-01 s, T_eff = 702.26 GB/s 
 
 
 #### GPU run ns=16384
-Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
-Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
-Time = 3.0494e+00 s, T_eff = 690.15 GB/s 
+Time = 3.0493e+00 s, T_eff = 690.16 GB/s 
