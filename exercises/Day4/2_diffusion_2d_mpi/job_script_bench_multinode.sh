@@ -7,12 +7,8 @@
 #PBS -q smp
 
 ml juliahpc
-ml mpi/openmpi
+ml openmpi
 cd $PBS_O_WORKDIR
-
-# OpenMPI settings
-export OMPI_MCA_mpi_cuda_support=0
-export OMPI_MCA_mca_component_show_load_errors=0
 
 # run MPI code
 for i in 1 2 4 8

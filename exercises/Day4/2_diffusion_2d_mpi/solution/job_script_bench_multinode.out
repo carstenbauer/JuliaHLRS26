@@ -1,35 +1,35 @@
 
 
 #### Run nranks=1
-[n002302:85584] Rank 0 bound to package[0][core:0]
+[n002002:214300] Rank 0 bound to package[0][core:L0]
 nprocs = 1, dims = (1, 1)
-Time = 9.4021e-01 s, T_eff = 17.67 GB/s 
+Time = 1.0294e+00 s, T_eff = 16.14 GB/s 
 
 
 #### Run nranks=2
-[n002302:85594] Rank 0 bound to package[0][core:0]
-[n002302:85594] Rank 1 bound to package[1][core:20]
+[n002002:214318] Rank 0 bound to package[0][core:L0]
+[n002002:214318] Rank 1 bound to package[1][core:L20]
 nprocs = 2, dims = (2, 1)
-Time = 9.7833e-01 s, T_eff = 16.98 GB/s 
+Time = 1.0730e+00 s, T_eff = 15.48 GB/s 
 
 
 #### Run nranks=4
-[n002302:85608] Rank 0 bound to package[0][core:0]
-[n002302:85608] Rank 1 bound to package[1][core:20]
-[n002402:85137] Rank 2 bound to package[0][core:0]
-[n002402:85137] Rank 3 bound to package[1][core:20]
+[n002002:214341] Rank 0 bound to package[0][core:L0]
+[n002002:214341] Rank 1 bound to package[1][core:L20]
+[n002302:215073] Rank 2 bound to package[0][core:L0]
+[n002302:215073] Rank 3 bound to package[1][core:L20]
 nprocs = 4, dims = (2, 2)
-Time = 9.8141e-01 s, T_eff = 16.92 GB/s 
+Time = 1.0917e+00 s, T_eff = 15.21 GB/s 
 
 
 #### Run nranks=8
-[n002302:85647] Rank 0 bound to package[0][core:0]
-[n002302:85647] Rank 1 bound to package[1][core:20]
-[n002402:85313] Rank 2 bound to package[0][core:0]
-[n002402:85313] Rank 3 bound to package[1][core:20]
-[n002101:85022] Rank 6 bound to package[0][core:0]
-[n002101:85022] Rank 7 bound to package[1][core:20]
-[n002102:85322] Rank 4 bound to package[0][core:0]
-[n002102:85322] Rank 5 bound to package[1][core:20]
+[n002002:214368] Rank 0 bound to package[0][core:L0]
+[n002002:214368] Rank 1 bound to package[1][core:L20]
+[n002502:215103] Rank 6 bound to package[0][core:L0]
+[n002502:215103] Rank 7 bound to package[1][core:L20]
+[n002001:215144] Rank 4 bound to package[0][core:L0]
+[n002001:215144] Rank 5 bound to package[1][core:L20]
+[n002302:215202] Rank 2 bound to package[0][core:L0]
+[n002302:215202] Rank 3 bound to package[1][core:L20]
 nprocs = 8, dims = (4, 2)
-Time = 1.0757e+00 s, T_eff = 15.44 GB/s 
+Time = 1.1710e+00 s, T_eff = 14.18 GB/s 

@@ -7,16 +7,15 @@
 #PBS -q smp
 
 ml juliahpc
-ml mpi/openmpi
+ml openmpi
 cd $PBS_O_WORKDIR
-
-# OpenMPI settings
-export OMPI_MCA_mpi_cuda_support=0
-export OMPI_MCA_mca_component_show_load_errors=0
 
 # run MPI code
 for i in 1 2 4 8
 do
     echo -e "\n\n#### Run nranks=$i"
-    mpiexec -n $i --hostfile $PBS_NODEFILE --map-by ppr:1:numa --bind-to core --report-bindings julia --project diffusion_2d_mpi.jl 1024 nosave
+    # mpiexec -n $i --hostfile $PBS_NODEFILE --map-by ppr:1:numa --bind-to core --report-bindings julia --project diffusion_2d_mpi.jl 1024 nosave
+
+    mpiexec -x PATH -x UCX_WARN_UNUSED_ENV_VARS -x UCX_ERROR_SIGNALS -n $i --hostfile $PBS_NODEFILE --map-by ppr:1:numa --bind-to core --report-bindings \
+    julia --project diffusion_2d_mpi.jl 1024 nosave
 done
