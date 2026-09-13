@@ -1,15 +1,14 @@
 ## PARAMETER INITIALIZATION
-function init_params_gpu(; ns=64, nt=ns^2÷40, kwargs...)
-    L    = 10.0                   # physical domain length
-    D    = 1.0                    # diffusion coefficient
-    dx   = L / ns                 # grid spacing
-    dy   = L / ns                 # grid spacing
-    dt   = (dx * dy) / D / 4.1         # time step
-    cs   = range(start=dx / 2, stop=L - dx / 2, length=ns) .- 0.5 * L # vector of coord points
-    nout = floor(Int, nt / 5)     # plotting frequency
-    nthreads = 32, 8              # number of threads per block
-    nblocks  = cld.(ns, nthreads) # number of blocks
-    return (; L, D, ns, nt, dx, dy, dt, cs, nout, nthreads, nblocks, kwargs...)
+function init_params_gpu(; ns=64, nt=ns^2÷40, dtype=Float32, kwargs...)
+    L    = dtype(10.0)                       # physical domain length
+    D    = dtype(1.0)                        # diffusion coefficient
+    dx   = L / ns                            # grid spacing (dtype / Int -> dtype)
+    dy   = L / ns
+    dt   = (dx * dy) / D / dtype(4.1)        # time step
+    cs   = range(dx / 2, L - dx / 2, length=ns) .- L / 2   # already dtype end-to-end
+    nout = floor(Int, nt / 5)                # plotting frequency
+    workgroupsize = (32, 8)                  # KA workgroup size (was "nthreads")
+    return (; L, D, ns, nt, dx, dy, dt, cs, nout, workgroupsize, kwargs...)
 end
 
 ## ARRAY INITIALIZATION
@@ -35,22 +34,4 @@ function print_perf(params, t_toc)
     (; ns, nt) = params
     @printf("Time = %1.4e s, T_eff = %1.2f GB/s \n", t_toc, round((2 / 1e9 * ns^2 * sizeof(Float64)) / (t_toc / (nt - 10)), sigdigits=6))
     return nothing
-end
-
-using ThreadPinning
-using SysInfo
-
-function choose_correct_gpu()
-    # PBS doesn't manage GPUs on the training cluster :(
-    # Here, we try to deduce the correct GPU from the assigned CPU cores.
-    haskey(ENV, "PBS_O_WORKDIR") || return # not within a PBS job
-    mask = getaffinity()
-    cpuids = ThreadPinning.Utility.affinitymask2cpuids(mask)
-    coreids = SysInfo.Internals.cpuid_to_core.(cpuids)
-    gpuids = floor.(Int, (coreids .- 1) ./ 4)
-    gpuid = minimum(gpuids)
-    CUDA.device!(gpuid)
-    println("Prologue: PBS assigned coreids = $(coreids).")
-    println("Prologue: Will use GPU $(gpuid+1) ($(uuid(device()))).")
-    return
 end

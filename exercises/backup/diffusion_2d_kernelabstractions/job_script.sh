@@ -20,5 +20,9 @@ for i in 1024 2048 4096 8192 16384
 do
     echo -e "\n\n#### Run ns=$i"
 
-    julia --project diffusion_2d_ka.jl $i
+    for backend in cpu cuda
+    do
+        echo -e "\n#### Backend: $backend"
+        julia --project --threads=10 diffusion_2d_ka.jl $i $backend
+    done
 done

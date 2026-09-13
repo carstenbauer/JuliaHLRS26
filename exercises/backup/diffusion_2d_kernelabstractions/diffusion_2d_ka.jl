@@ -8,7 +8,8 @@
 using Printf
 using JLD2
 using KernelAbstractions
-using CUDA               # concrete backend; swap for AMDGPU/Metal as needed
+using CUDA
+# using Metal
 using Plots
 include(joinpath(@__DIR__, "shared.jl"))
 
@@ -32,16 +33,15 @@ macro qy(ix, iy) esc(:(-D * (C[$ix, $iy+1] - C[$ix, $iy]) * inv(dy))) end
 end
 
 function diffusion_step!(params, C2, C)
-    (; dx, dy, dt, D, nthreads) = params
+    (; dx, dy, dt, D, workgroupsize) = params
     backend = KernelAbstractions.get_backend(C)
-    kernel! = diffusion_step_kernel!(backend, nthreads)
+    kernel! = diffusion_step_kernel!(backend, workgroupsize)
     kernel!(C2, C, dx, dy, dt, D; ndrange=(size(C, 1) - 2, size(C, 2) - 2))
     return nothing
 end
 
-function run_diffusion(; ns=128, nt=ns^2÷40, do_visualize=false, ArrayType=CuArray)
-    choose_correct_gpu()
-    params   = init_params_gpu(; ns, nt, do_visualize)
+function run_diffusion(; ns=128, nt=ns^2÷40, do_visualize=false, ArrayType=Array, dtype=Float32)
+    params   = init_params_gpu(; ns, nt, do_visualize, dtype)
     C, C2    = init_arrays(params)
 
     # Move C and C2 onto whichever device ArrayType represents
@@ -69,6 +69,13 @@ function run_diffusion(; ns=128, nt=ns^2÷40, do_visualize=false, ArrayType=CuAr
     return nothing
 end
 
+# maps a CLI device string to the corresponding array type
+const DEVICE_ARRAYTYPES = Dict(
+    "cpu"   => Array,
+    "cuda"  => CuArray,
+    # "metal" => MtlArray,
+)
+
 # Running things...
 
 # enable saving by default
@@ -78,7 +85,11 @@ end
 
 if do_run
     if !isempty(ARGS)
-        run_diffusion(; ns=parse(Int, ARGS[1]), nt=500, do_visualize=false)
+        ns     = parse(Int, ARGS[1])
+        device = length(ARGS) >= 2 ? ARGS[2] : "cpu"
+        haskey(DEVICE_ARRAYTYPES, device) ||
+            error("Unknown device \"$device\": choose one of $(join(keys(DEVICE_ARRAYTYPES), ", ")).")
+        run_diffusion(; ns, nt=500, do_visualize=false, ArrayType=DEVICE_ARRAYTYPES[device])
     else
         run_diffusion(; do_visualize)
     end
