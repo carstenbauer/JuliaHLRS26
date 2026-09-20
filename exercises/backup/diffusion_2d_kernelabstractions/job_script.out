@@ -1,0 +1,63 @@
+
+
+#### Run ns=256
+
+#### Backend: cpu
+Time = 2.1120e-02 s, T_eff = 24.33 GB/s 
+
+#### Backend: cuda
+Time = 3.4571e-03 s, T_eff = 148.62 GB/s 
+
+
+#### Run ns=512
+
+#### Backend: cpu
+Time = 4.1778e-02 s, T_eff = 49.19 GB/s 
+
+#### Backend: cuda
+Time = 3.4502e-03 s, T_eff = 595.69 GB/s 
+
+
+#### Run ns=1024
+
+#### Backend: cpu
+Time = 1.3867e-01 s, T_eff = 59.28 GB/s 
+
+#### Backend: cuda
+Time = 3.2729e-02 s, T_eff = 251.18 GB/s 
+
+
+#### Run ns=2048
+
+#### Backend: cpu
+Time = 6.4813e-01 s, T_eff = 50.74 GB/s 
+
+#### Backend: cuda
+Time = 4.7931e-02 s, T_eff = 686.05 GB/s 
+
+
+#### Run ns=4096
+
+#### Backend: cpu
+Time = 2.6260e+00 s, T_eff = 50.09 GB/s 
+
+#### Backend: cuda
+Time = 1.8689e-01 s, T_eff = 703.81 GB/s 
+
+
+#### Run ns=8192
+
+#### Backend: cpu
+Time = 1.2936e+01 s, T_eff = 40.67 GB/s 
+
+#### Backend: cuda
+Time = 7.4780e-01 s, T_eff = 703.57 GB/s 
+
+
+#### Run ns=16384
+
+#### Backend: cpu
+Time = 5.3250e+01 s, T_eff = 39.52 GB/s 
+
+#### Backend: cuda
+Time = 3.0346e+00 s, T_eff = 693.51 GB/s 
