@@ -27,8 +27,7 @@ To make Julia available on the cluster, we need to load the necessary system mod
 1. Load the modules for this course:
    
     ```
-    module load juliahpc
-    module load mpi/openmpi    # for MPI (not needed today → Friday)
+    ml juliahpc openmpi
     ```
     
 2. Inside of the workshop directory `$SCRATCH/JuliaHLRS25` (you should still be there), start Julia with `julia --project`.
@@ -58,7 +57,7 @@ As there is no internet on the cluster, we have to install the extension from fi
 * Enter the following path and press Enter:
 
 ```
-/shared/akad-julia/language-julia-1.149.2.vsix
+/shared/akad-julia/language-julia-1.242.2.vsix
 ```
 
 After a while, the Julia extension should be installed.
