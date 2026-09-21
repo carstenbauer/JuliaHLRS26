@@ -6,8 +6,7 @@ using ThreadPinning
 
 do_visualize = false
 do_run = false
-codefile = joinpath(@__DIR__, "../diffusion_2d_threads.jl")
-include(codefile)
+include(joinpath(@__DIR__, "../diffusion_2d_threads.jl"))
 
 ns  = parse(Int, ARGS[1])
 nt  = 100

@@ -40,7 +40,7 @@ function diffusion_step!(params, C2, C)
     return nothing
 end
 
-function run_diffusion(; ns=128, nt=ns^2÷40, do_visualize=false, ArrayType=Array, dtype=Float32)
+function run_diffusion(; ns=128, nt=ns^2÷40, do_visualize=false, ArrayType=Array, dtype=Float64)
     params   = init_params_gpu(; ns, nt, do_visualize, dtype)
     C, C2    = init_arrays(params)
 
@@ -52,6 +52,8 @@ function run_diffusion(; ns=128, nt=ns^2÷40, do_visualize=false, ArrayType=Arra
     maybe_visualize(params, C)
     t_tic    = 0.0
     backend  = KernelAbstractions.get_backend(C)
+    params = (; params..., workgroupsize=backend isa KernelAbstractions.CPU ? (size(C, 1) - 2, 1) : (32, 8))
+
     # Time loop
     for it in 1:nt
         # time after warmup (ignore first 10 iterations)

@@ -16,7 +16,7 @@ After some time, you should have VS Code running on the cluster. 🎉
 
 1. Open a terminal in VSCode by either pressing `CTRL + ~` or running the command `Terminal: Create New Terminal`.
 
-2. In the terminal in the bottom, navigate to your copy of the workshop materials: `cd $SCRATCH/JuliaHLRS25`.
+2. In the terminal in the bottom, navigate to your copy of the workshop materials: `cd $SCRATCH/JuliaHLRS26`.
  
 4. Execute `code -r .` to tell the VS Code session to switch into the active folder (such that you see the workshop directory in the file tree in the left pane).
 
@@ -27,12 +27,11 @@ To make Julia available on the cluster, we need to load the necessary system mod
 1. Load the modules for this course:
    
     ```
-    module load juliahpc
-    module load mpi/openmpi    # for MPI (not needed today → Friday)
+    ml juliahpc openmpi
     ```
     
-2. Inside of the workshop directory `$SCRATCH/JuliaHLRS25` (you should still be there), start Julia with `julia --project`.
-    - The `--project` flag is important and tells Julia to use the local Julia environment of the workshop. You can use it anywhere inside of `JuliaHLRS25`, including its subdirectories.
+2. Inside of the workshop directory `$SCRATCH/JuliaHLRS26` (you should still be there), start Julia with `julia --project`.
+    - The `--project` flag is important and tells Julia to use the local Julia environment of the workshop. You can use it anywhere inside of `JuliaHLRS26`, including its subdirectories.
 
 3. The following Julia commands should work now:
 
@@ -58,7 +57,7 @@ As there is no internet on the cluster, we have to install the extension from fi
 * Enter the following path and press Enter:
 
 ```
-/shared/akad-julia/language-julia-1.149.2.vsix
+/shared/akad-julia/language-julia-1.242.2.vsix
 ```
 
 After a while, the Julia extension should be installed.

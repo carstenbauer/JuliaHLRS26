@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -N diff2dgpu
 #PBS -l select=1:node_type=clx-ai:ncpus=10:mem=10gb:ngpus=1
-#PBS -l walltime=00:10:00
+#PBS -l walltime=00:15:00
 #PBS -q smp
 #PBS -j oe
 #PBS -o job_script.out

@@ -7,8 +7,7 @@ function init_params_gpu(; ns=64, nt=ns^2÷40, dtype=Float32, kwargs...)
     dt   = (dx * dy) / D / dtype(4.1)        # time step
     cs   = range(dx / 2, L - dx / 2, length=ns) .- L / 2   # already dtype end-to-end
     nout = floor(Int, nt / 5)                # plotting frequency
-    workgroupsize = (32, 8)                  # KA workgroup size (was "nthreads")
-    return (; L, D, ns, nt, dx, dy, dt, cs, nout, workgroupsize, kwargs...)
+    return (; L, D, ns, nt, dx, dy, dt, cs, nout, dtype, kwargs...)
 end
 
 ## ARRAY INITIALIZATION
@@ -31,7 +30,7 @@ function maybe_visualize(params, C, it=0)
 end
 
 function print_perf(params, t_toc)
-    (; ns, nt) = params
-    @printf("Time = %1.4e s, T_eff = %1.2f GB/s \n", t_toc, round((2 / 1e9 * ns^2 * sizeof(Float64)) / (t_toc / (nt - 10)), sigdigits=6))
+    (; ns, nt, dtype) = params
+    @printf("Time = %1.4e s, T_eff = %1.2f GB/s \n", t_toc, round((2 / 1e9 * ns^2 * sizeof(dtype)) / (t_toc / (nt - 10)), sigdigits=6))
     return nothing
 end
