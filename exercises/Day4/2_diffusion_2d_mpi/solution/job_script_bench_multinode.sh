@@ -14,7 +14,6 @@ cd $PBS_O_WORKDIR
 for i in 1 2 4 8
 do
     echo -e "\n\n#### Run nranks=$i"
-    # mpiexec -n $i --hostfile $PBS_NODEFILE --map-by ppr:1:numa --bind-to core --report-bindings julia --project diffusion_2d_mpi.jl 1024 nosave
 
     mpiexec -x PATH -x UCX_WARN_UNUSED_ENV_VARS -x UCX_ERROR_SIGNALS -n $i --hostfile $PBS_NODEFILE --map-by ppr:1:numa --bind-to core --report-bindings \
     julia --project diffusion_2d_mpi.jl 1024 nosave
