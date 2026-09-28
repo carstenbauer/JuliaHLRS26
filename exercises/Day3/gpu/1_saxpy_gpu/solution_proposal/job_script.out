@@ -1,11 +1,9 @@
-Prologue: PBS assigned coreids = [1, 2, 3, 4, 1, 2, 3, 4].
-Prologue: Will use GPU 1 (14cb10e7-c73b-7dba-eef9-5add3baf409b).
 ┌─────────────┬─────────┬─────────┬───────────┐
 │     Variant │ Runtime │   FLOPS │ Bandwidth │
 │             │      ms │ GFLOP/s │      GB/s │
 ├─────────────┼─────────┼─────────┼───────────┤
-│   Broadcast │ 8.02474 │ 133.804 │   802.823 │
-│ CUDA kernel │   8.031 │   133.7 │   802.198 │
-│      CUBLAS │ 8.05777 │ 133.255 │   799.533 │
+│   Broadcast │  8.0038 │ 134.154 │   804.924 │
+│ CUDA kernel │ 8.03433 │ 133.644 │   801.866 │
+│      CUBLAS │  8.0292 │  133.73 │   802.377 │
 └─────────────┴─────────┴─────────┴───────────┘
 Theoretical Memory Bandwidth of NVIDIA V100: 900 GB/s

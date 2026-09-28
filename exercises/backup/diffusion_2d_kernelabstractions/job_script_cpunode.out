@@ -1,0 +1,42 @@
+
+
+#### Run ns=256
+
+#### Backend: cpu
+Time = 1.7959e-02 s, T_eff = 28.61 GB/s 
+
+
+#### Run ns=512
+
+#### Backend: cpu
+Time = 3.6701e-02 s, T_eff = 56.00 GB/s 
+
+
+#### Run ns=1024
+
+#### Backend: cpu
+Time = 1.3081e-01 s, T_eff = 62.85 GB/s 
+
+
+#### Run ns=2048
+
+#### Backend: cpu
+Time = 4.1630e-01 s, T_eff = 78.99 GB/s 
+
+
+#### Run ns=4096
+
+#### Backend: cpu
+Time = 1.3400e+00 s, T_eff = 98.16 GB/s 
+
+
+#### Run ns=8192
+
+#### Backend: cpu
+Time = 5.9116e+00 s, T_eff = 89.00 GB/s 
+
+
+#### Run ns=16384
+
+#### Backend: cpu
+Time = 2.6776e+01 s, T_eff = 78.60 GB/s 

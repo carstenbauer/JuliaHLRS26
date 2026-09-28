@@ -7,9 +7,8 @@ export MODULEPATH="/shared/akad-julia/modules:$MODULEPATH"
 source /opt/system/lmod/lmod/init/profile
 # ------------------------------------------------------------
 
-# Load julia
-ml juliahpc
-# ml openmpi # for MPI
+# Load julia and deps
+ml juliahpc openmpi
 
 # Pass on all arguments to julia
 exec julia "${@}"

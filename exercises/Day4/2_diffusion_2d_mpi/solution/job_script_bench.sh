@@ -14,13 +14,9 @@ if [[ -n "${PBS_O_WORKDIR}" ]]; then
     WORKDIR=$PBS_O_WORKDIR
     # ... and load the module(s)
     ml juliahpc
-    ml mpi/openmpi
+    ml openmpi
 fi
 cd $WORKDIR
-
-# OpenMPI settings
-export OMPI_MCA_mpi_cuda_support=0
-export OMPI_MCA_mca_component_show_load_errors=0
 
 # run MPI code
 for i in 1 2 4 8 9 12

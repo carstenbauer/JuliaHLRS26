@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N diff2dmpi
-#PBS -l select=1:node_type=skl:ncpus=4:mpiprocs=4
+#PBS -l select=1:node_type=skl:ncpus=4:mem=4gb:mpiprocs=4
 #PBS -l walltime=00:10:00
 #PBS -j oe
 #PBS -o job_script.out
@@ -13,13 +13,9 @@ if [[ -n "${PBS_O_WORKDIR}" ]]; then
     WORKDIR=$PBS_O_WORKDIR
     # ... and load the module(s)
     ml juliahpc
-    ml mpi/openmpi
+    ml openmpi
 fi
 cd $WORKDIR
-
-# OpenMPI settings
-export OMPI_MCA_mpi_cuda_support=0
-export OMPI_MCA_mca_component_show_load_errors=0
 
 # run MPI code
 mpiexecjl -n 4 julia --project diffusion_2d_mpi.jl
